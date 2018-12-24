@@ -38,7 +38,12 @@ samsung 4
 
 ```shell
 npm install --save-dev angular@1.7
+npm install --save-dev babel-plugin-angularjs-annotate
 ```
+
+[babel-plugin-angularjs-annotate](https://github.com/schmod/babel-plugin-angularjs-annotate)
+
+> [Why BPAA (babel-plugin-angularjs-annotate)?](https://www.codelord.net/2017/06/18/ng-annotate-deprecated-what-that-means-for-your-projects/)
 
 ## Hello world
 
