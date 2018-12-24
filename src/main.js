@@ -1,16 +1,4 @@
 import angular from 'angular';
+import main from '@/components/main.js'
 
-class controller{
-  constructor() {
-    console.log('constructor');
-  }
-}
-
-angular.module('MainApp', [])
-
-angular.module('app', [])
-  .component('main', {
-    template: `<div>Hello AngularJS</div>`,
-    controller,
-    controllerAs: 'vm',
-  }).name;
+angular.bootstrap(document.querySelector("#app"), [main])
