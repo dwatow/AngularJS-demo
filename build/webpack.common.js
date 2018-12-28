@@ -1,6 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -28,6 +31,11 @@ module.exports = {
         ignore: ['.*']
       }
     ]),
+    new CleanWebpackPlugin('dist'),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: 'public/index.html',
+    }),
     // new webpack.ProvidePlugin({
     //   'jQuery': 'jquery',
     //   'alasql': 'alasql'

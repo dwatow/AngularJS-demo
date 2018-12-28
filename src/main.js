@@ -1,4 +1,4 @@
 import angular from 'angular';
-import main from '@/components/main.js'
+import App from './app.js'
 
-angular.bootstrap(document.querySelector("#app"), [main])
+angular.bootstrap(document, [App])

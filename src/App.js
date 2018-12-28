@@ -6,11 +6,9 @@ class controller {
   }
 }
 
-export default angular.module('main', [])
-  .component('main', {
+export default angular.module('app', [])
+  .component('app', {
     template: `<div>Hello AngularJS</div>`,
     controller,
     controllerAs: 'vm',
   }).name;
-
-controller.$inject = []
