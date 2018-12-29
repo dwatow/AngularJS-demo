@@ -1,59 +1,41 @@
 const path = require('path');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 function resolve(dir) {
-  return path.join(__dirname, '..', dir)
+  return path.join(__dirname, '../', dir)
 }
 
 module.exports = {
-  entry: {
-    index: resolve('./src/main.js')
-  },
-  output: {
-    filename: './index.js',
-    path: resolve('./dist')
-  },
+  // entry: resolve('./src/main.js'),
+  // output: {
+  //   filename: './index.js',
+  // },
   resolve: {
     alias: {
-      '@': resolve('./')
+      '@': resolve('src'),
     }
   },
   plugins: [
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../public'),
-        to: path.resolve(__dirname, '../dist'),
-        ignore: ['.*']
-      }
-    ]),
-    new CleanWebpackPlugin('dist'),
+    // new CopyWebpackPlugin([{
+    //   from: path.resolve(__dirname, '../public'),
+    //   to: path.resolve(__dirname, '../dist'),
+    //   ignore: ['.*', 'index.html']
+    // }]),
+    new CleanWebpackPlugin(['dist'], {
+      root: resolve(''),
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: 'public/index.html',
     }),
-    // new webpack.ProvidePlugin({
-    //   'jQuery': 'jquery',
-    //   'alasql': 'alasql'
-    // }),
   ],
   module: {
     rules: [{
-      test: /\.js$/,
-      loader: "babel-loader"
-    }, {
-      test: /\.html$/,
-      use: [{
-        loader: 'html-loader',
-        options: {
-          minimize: true
-        }
-      }]
-    }, {
       test: /\.css$/,
       use: [
         'style-loader',
@@ -67,17 +49,11 @@ module.exports = {
         'sass-loader'
       ]
     }, {
-      test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpg|gif)$/,
+      test: /\.html$/,
       use: [{
-        loader: 'file-loader',
+        loader: 'html-loader',
         options: {
-          outputPath: '/assets',
-        }
-      }, {
-        loader: 'url-loader',
-        options: {
-          outputPath: '/assets',
-          limit: 10000 //bytes
+          minimize: true
         }
       }]
     }]
