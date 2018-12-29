@@ -10,22 +10,12 @@ function resolve(dir) {
 }
 
 module.exports = {
-  // entry: resolve('./src/main.js'),
-  // output: {
-  //   filename: './index.js',
-  // },
   resolve: {
     alias: {
       '@': resolve('src'),
     }
   },
   plugins: [
-    // copy custom static assets
-    // new CopyWebpackPlugin([{
-    //   from: path.resolve(__dirname, '../public'),
-    //   to: path.resolve(__dirname, '../dist'),
-    //   ignore: ['.*', 'index.html']
-    // }]),
     new CleanWebpackPlugin(['dist'], {
       root: resolve(''),
     }),
