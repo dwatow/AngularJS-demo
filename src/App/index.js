@@ -1,7 +1,7 @@
 import angular from 'angular';
 import HelloWorld from '@/components/HelloWorld';
 import template from './index.html';
-import css from './index.css';
+import './index.css';
 
 
 class controller {
