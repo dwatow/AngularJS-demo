@@ -54,7 +54,8 @@ main.js 會編成 index.js
 
 ```javascript
 import angular from 'angular';
-angular.bootstrap(document.querySelector("#app"), [])
+import App from './App';
+angular.bootstrap(document, [App])
 ```
 
 **index.html**
@@ -68,8 +69,7 @@ angular.bootstrap(document.querySelector("#app"), [])
     <title>AngularJS - demo</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script src="./index.js" charset="utf-8"></script>
+    <app></app>
   </body>
 </html>
 ```
