@@ -61,7 +61,7 @@ angular.bootstrap(document, [App])
 
 **index.html**
 
-因為要使用 `document.querySelector('#app')` 所以必須要在 `body` 最下面引用 `index.js`
+因為要使用 `document` 所以必須要在 `body` 最下面引用 `index.js`
 
 ```html
 <!DOCTYPE HTML>
@@ -95,7 +95,10 @@ angular.module("app"), [])
   </head>
   <body>
     <div ng-app="app"></div>
-    <script src="./index.js" charset="utf-8"></script>
   </body>
 </html>
 ```
+
+## 不建議使用
+
+- [ng-loader](https://www.npmjs.com/package/ng-loader): Component 不能區域化註冊，很可惜。
