@@ -3,6 +3,7 @@ import template from './index.html';
 
 class controller {
   constructor() {
+    this.member = 'chris';
     console.error('tabHome: ', 'constructor');
   }
 
@@ -32,4 +33,8 @@ export default angular.module('tabHome', [])
     template,
     controller,
     controllerAs: 'vm',
+    bindings: {
+      text: '<',
+      myTouch: '&',
+    }
   }).name;

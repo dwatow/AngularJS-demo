@@ -12,12 +12,14 @@ class controller {
   $onInit() {
     this.currentTab = 'Home';
     this.tabs = ['Home', 'Posts', 'Archive'];
-    // this.text = 'hello vue.js';
-    // this.message = 'message is here';
+    this.text = 'hello AngularJS';
+    this.message = 'message is here';
+    this.currentTabTemplate = `./Tab${this.currentTab}/index.html`;
   }
 
   $doCheck() {
     this.currentTabComponent = this.computedCurrentTabComponent();
+    console.log(this.currentTabTemplate);
   }
 
   isCurrTabIsMe(targetTabName) {
@@ -28,6 +30,10 @@ class controller {
   computedCurrentTabComponent() {
     // console.log('tab-' + this.currentTab.toLowerCase());
     return 'tab-' + this.currentTab.toLowerCase()
+  }
+
+  onTouch ({text}) {
+    this.message = text;
   }
 }
 

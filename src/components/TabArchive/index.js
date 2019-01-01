@@ -5,23 +5,23 @@ class controller {
   constructor() {}
 
   $onInit() {
-    console.log('$onInit');
+    console.log('tabArchive: ', '$onInit');
   }
 
   $onChanges(changesObj) {
-    console.log('$onChanges');
+    console.log('tabArchive: ', '$onChanges');
   }
 
   $doCheck() {
-    console.log('$doCheck');
+    console.log('tabArchive: ', '$doCheck');
   }
 
   $onDestroy() {
-    console.log('$onDestroy');
+    console.log('tabArchive: ', '$onDestroy');
   }
-  
+
   $postLink() {
-    console.log('$postLink');
+    console.log('tabArchive: ', '$postLink');
   }
 }
 

@@ -4,16 +4,11 @@
   ng-class="['tab-button', { 'active': vm.currentTab === tab }]"
   ng-click="vm.currentTab = tab"
 >{{ tab }}</button>
-  <!-- <component
-  v-bind:is="currentTabComponent"
-  class="tab"
-  :text="text"
-  @my-touch="onTouch"
-  >
-  </component> -->
-<!-- <input v-model="text" placeholder="edit me"> -->
-<!-- <div>{{message}}</div> -->
-  <tab-home ng-if="vm.isCurrTabIsMe('tab-home')" text="vm.text"></tab-home>
-  <tab-posts ng-if="vm.isCurrTabIsMe('tab-posts')" text="vm.text"></tab-posts>
-  <tab-archive ng-if="vm.taisCurrTabIsMe('tab-archive')" text="vm.text"></tab-archive>
+  <tab-home ng-if="vm.isCurrTabIsMe('tab-home')" class="tab" text="vm.text" my-touch="vm.onTouch({text})"></tab-home>
+  <tab-posts ng-if="vm.isCurrTabIsMe('tab-posts')" class="tab" text="vm.text" my-touch="vm.onTouch({text})">
+    <tab-archive text="vm.text" my-touch="vm.onTouch({text})"></tab-archive>
+  </tab-posts>
+  <tab-archive ng-if="vm.isCurrTabIsMe('tab-archive')" class="tab" text="vm.text" my-touch="vm.onTouch({text})"></tab-archive>
+  <input ng-model="vm.text" placeholder="edit me">
+  <div>{{ vm.message }}</div>
 </div>
