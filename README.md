@@ -102,3 +102,4 @@ angular.module("app"), [])
 ## 不建議使用
 
 - [ng-loader](https://www.npmjs.com/package/ng-loader): Component 不能區域化註冊，很可惜。
+- `ng-include` 如果只是要改變 template 而與 controller 無關的話，才使用它。
