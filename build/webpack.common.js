@@ -32,6 +32,16 @@ module.exports = {
         'css-loader'
       ]
     }, {
+      test: /\.js$/,
+      exclude : /(node_modules)/,
+      include: [resolve('src')],
+      enforce: "pre",
+      use: [{
+        loader: "eslint-loader",
+      }, {
+        loader: "prettier-loader"
+      }]
+    }, {
       test: /\.scss$/,
       use: [
         'style-loader',

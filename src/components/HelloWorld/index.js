@@ -1,23 +1,26 @@
-import angular from 'angular';
-import template from './index.html';
-import './index.css';
+import angular from "angular";
+import template from "./index.html";
+import "./index.css";
 
-class controller{
-  constructor () {
-    console.log('hi')
+class controller {
+  constructor($log, ItemService) {
+    this.$log = $log;
+    this.ItemService = ItemService;
+
+    this.$log.log("$log: hi");
   }
 
-  $onInit () {
-    console.log(this.msg);
+  $onInit() {
+    this.$log.log(this.msg);
+    this.ItemService.getD();
   }
 }
 
-export default angular.module('helloWorld', [])
-.component('helloWorld', {
+export default angular.module("helloWorld", []).component("helloWorld", {
   template,
   controller,
   bindings: {
-    msg: '<',
+    msg: "<",
   },
-  controllerAs: 'vm',
+  controllerAs: "vm",
 }).name;
