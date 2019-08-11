@@ -4,9 +4,7 @@ import template from "./index.html";
 import "./index.css";
 
 class controller {
-  constructor(ItemService) {
-    console.log("constructor", ItemService); // eslint-disable-line
-  }
+  constructor() {}
 }
 
 export default angular.module("app", [HelloWorld]).component("app", {

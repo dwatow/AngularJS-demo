@@ -3,16 +3,16 @@ import template from "./index.html";
 import "./index.css";
 
 class controller {
-  constructor($log, ItemService) {
+  constructor($log, mathservice) {
     this.$log = $log;
-    this.ItemService = ItemService;
+    this.mathservice = mathservice;
 
     this.$log.log("$log: hi");
   }
 
   $onInit() {
     this.$log.log(this.msg);
-    this.ItemService.getD();
+    this.math = this.mathservice.addTwoNumbers(1, 2);
   }
 }
 

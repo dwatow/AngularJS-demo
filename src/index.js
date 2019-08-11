@@ -1,5 +1,5 @@
 import angular from "angular";
 import App from "./App";
-import ItemService from "./service/itemService";
+import mathmodule from "./service/mathmodule";
 
-angular.bootstrap(document, [App, ItemService]);
+angular.bootstrap(document, [App, mathmodule]);
