@@ -1,5 +1,6 @@
 import angular from "angular";
 import template from "./index.html";
+
 import "./index.css";
 
 class controller {
@@ -11,8 +12,12 @@ class controller {
   }
 
   $onInit() {
-    this.$log.log(this.msg);
     this.math = this.mathservice.addTwoNumbers(1, 2);
+    this.$log.log(this.msg);
+  }
+
+  changeHead(msg) {
+    this.msg = msg;
   }
 }
 
